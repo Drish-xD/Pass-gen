@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-image: url(topography.svg);
+  background-color: #0c0c0c;
+}
+
+.mainpage{
+  width: 100%;
+  height: calc(100vh - 62px);
+  color: #fafafa;
+}
+
+.title {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.title h1 {
+  font: 80px "Dosis", sans-serif;
+  text-transform: uppercase;
+  color: #7e57c2;
+  letter-spacing: 0.8rem;
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 8vh 0 0 0;
+}
+
+.user-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.user-input h3 {
+  font: 40px "Dosis", sans-serif;
+  letter-spacing: 1mm;
+}
+
+.value {
+  font: 6em "Dosis", sans-serif;
+  text-align: center;
+  margin: 20px auto;
+}
+
+input[type="range"] {
+  display: block;
+  -webkit-appearance: none;
+  background-color: #253139;
+  width: 300px;
+  height: 5px;
+  border-radius: 5px;
+  margin: 0 auto;
+  outline: 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: #7e57c2;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+​ input[type="range"]::-webkit-slider-thumb:hover {
+  background-color: white;
+  border: 2px solid #e74c3c;
+}
+input[type="range"]::-webkit-slider-thumb:active {
+  transform: scale(1.6);
+}
+
+.output-box {
+  margin: 8vh 0 5vh 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.output-box h3 {
+  font: 40px "Dosis", sans-serif;
+  letter-spacing: 1mm;
+  padding: 0 0 20px 0;
+}
+
+.output-box .output {
+  background-color: rgba(36, 48, 56, 0.8);
+  border-radius: 50px;
+  text-align: center;
+  padding: 10px 100px;
+  font: 40px "Dosis", sans-serif;
+  border: 3px solid #7e57c2;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.copy-btn {
+  font: 1.5rem "Dosis", sans-serif;
+  letter-spacing: 0.2rem;
+  width: 200px;
+  height: 60px;
+  background-color: #243038b3;
+  border-radius: 50px;
+  border: 3px solid #7e57c2;
+  cursor: pointer;
+  color: #fafafa;
+  margin: 0 20px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.reset-btn {
+  font: 1.5rem "Dosis", sans-serif;
+  letter-spacing: 0.2rem;
+  width: 250px;
+  height: 60px;
+  background-color: #243038b3;
+  border: none;
+  border-radius: 50px;
+  border: 3px solid #7e57c2;
+  cursor: pointer;
+  outline: none;
+  color: #fafafa;
+  margin: 0 20px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.copy-btn:hover,
+.reset-btn:hover {
+  box-shadow: inset 0 0 0 40px #7e56c2b3;
+  color: #0c0c0c;
+}
+
+footer {
+  position: relative;
+  display: flex;
+  width: 100%;
+  background-color: #111111;
+}
+
+footer h4 {
+  width: 100%;
+  font: 18px "Dosis", sans-serif;
+  letter-spacing: 0.2rem;
+  color: #fafafa;
+  text-align: center;
+  padding: 20px 0;
+}
+
+@media screen and (max-width: 1100px) {
+  .title h1 {
+    font: 75px "Dosis", sans-serif;
+  }
+
+  .container {
+    padding: 5vh 0 0 0;
+  }
+
+  .user-input h3,
+  .output-box h3 {
+    font: 30px "Dosis", sans-serif;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .mainpage{
+    width: 100%;
+    height: calc(100vh - 45px);
+    color: #fafafa;
+  }
+
+  .title h1 {
+    font: 12vw "Dosis", sans-serif;
+  }
+
+  .user-input h3,
+  .output-box h3 {
+    font: 25px "Dosis", sans-serif;
+  }
+
+  .value {
+    font: 4em "Dosis", sans-serif;
+  }
+
+  .output-box {
+    margin: 7vh 0 3vh 0;
+  }
+
+  .output-box .output {
+    padding: 10px 70px;
+    font: 30px "Dosis", sans-serif;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .copy-btn {
+    font: 1.2rem "Dosis", sans-serif;
+    width: 150px;
+    height: 50px;
+    margin: 0 0 20px 0;
+  }
+
+  .reset-btn {
+    font: 1.2rem "Dosis", sans-serif;
+    width: 170px;
+    height: 50px;
+  }
+
+  footer h4 {
+    font: 12px "Dosis", sans-serif;
+    padding: 15px 0;
+  }
+}

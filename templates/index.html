@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <title>Password Generator</title>
+  </head>
+  <body>
+    <section class="mainpage">
+      <!-- Title of page -->
+
+      <div class="title">
+        <h1>Password Generator</h1>
+      </div>
+
+      <!-- container -->
+
+      <div class="container">
+        <!-- User input -->
+
+        <div class="user-input">
+          <h3>Select Length of Password</h3>
+          <form>
+            <div class="value">8</div>
+            <input type="range" min="8" max="128" step="1" value="0" />
+          </form>
+        </div>
+
+        <!-- Output -->
+
+        <div class="output-box">
+          <h3>Your New Password is </h3>
+          <div class="output" id="output">{{ password_gen }}</div>
+        </div>
+
+        <!-- button -->
+        <div class="buttons">
+          <button class="copy-btn">
+            <span
+              class="iconify"
+              data-icon="ic:baseline-file-copy"
+              data-inline="true"
+            ></span>
+            Copy
+          </button>
+          <button class="reset-btn" onclick="refreshPage()">
+            <span
+              class="iconify"
+              data-icon="ic:twotone-refresh"
+              data-inline="true"
+            ></span>
+            Regenerate
+          </button>
+        </div>
+      </div>      
+    </section>
+
+    <footer class="foot">
+      <h4>&copy; Copyrights 2021 by Drish. All Rights Reserved.</h4>
+    </footer>
+    
+    <script>
+      // slider value
+
+      var elem = document.querySelector('input[type="range"]');
+
+      var rangeValue = function () {
+        var newValue = elem.value;
+        var target = document.querySelector(".value");
+        target.innerHTML = newValue;
+      };
+
+      elem.addEventListener("input", rangeValue);
+
+      // copy button
+
+      $(document).on("click", ".copy-btn", function () {
+        var range = document.createRange();
+        range.selectNode(document.getElementById("output"));
+        window.getSelection().removeAllRanges(); // clear current selection
+        window.getSelection().addRange(range); // to select text
+        document.execCommand("copy");
+        window.getSelection().removeAllRanges(); // to deselect
+      });
+
+      // reload button
+
+      function refreshPage() {
+        window.location.reload();
+      }
+    </script>
+  </body>
+</html>
