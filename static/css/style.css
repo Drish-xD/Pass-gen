@@ -237,10 +237,6 @@ nav ul li a {
   transition: all 0.5s;
 }
 
-.copy-btn:active{
-  content: "Copied";
-}
-
 .reset-btn {
   font: 1.5rem "Dosis", sans-serif;
   letter-spacing: 0.2rem;
