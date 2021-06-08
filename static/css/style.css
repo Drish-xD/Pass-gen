@@ -223,6 +223,9 @@ nav ul li a {
 }
 
 .copy-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   font: 1.5rem "Dosis", sans-serif;
   letter-spacing: 0.2rem;
   width: 200px;

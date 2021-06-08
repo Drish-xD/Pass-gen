@@ -7,13 +7,16 @@ function copypassword() {
   window.getSelection().addRange(range); // to select text
   document.execCommand("copy");
   window.getSelection().removeAllRanges();// to deselect
+
+  document.getElementById('copy-btn')
+  .innerHTML="Copied!";
 }
 
 // reload button
 
 function refreshPage() {
-  window.location.reload();
-}
+  $('#output').load(" #output").removeClass('output')
+};
 
 // Drop down animatio of menu bar (only for screen width < 786px)
 
