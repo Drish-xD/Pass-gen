@@ -14,14 +14,16 @@ html {
 body {
   width: 100%;
   height: 100vh;
-  background-image: url(topography.svg);
+  background-image: url(../Assets/topography.svg);
   background-color: #0c0c0c;
+  z-index: 8;
 }
 
 .mainpage{
   width: 100%;
   height: calc(100vh - 62px);
   color: #fafafa;
+  z-index: 2;
 }
 
 .title {
