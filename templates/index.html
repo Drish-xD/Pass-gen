@@ -18,6 +18,41 @@
     <title>Password Generator</title>
   </head>
   <body>
+    <!-- navbar -->
+
+    <nav class="nav-bar">
+      <div class="menu-bar">
+        <div class="menu-icon">
+          <div class="wrapper-menu">
+            <div class="line-menu half start"></div>
+            <div class="line-menu"></div>
+            <div class="line-menu half end"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+
+      <div class="menu">
+        <ul>
+          <li><a href="https://drish-xd.github.io">Home</a></li>
+          <li>
+            <a href="https://drish-xd.github.io/Portfolio#About-me">About</a>
+          </li>
+          <li>
+            <a href="https://drish-xd.github.io/Portfolio#Skills">Skill</a>
+          </li>
+          <li>
+            <a href="https://drish-xd.github.io/Portfolio#Contacts">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
     <section class="mainpage">
       <!-- Title of page -->
 
@@ -25,45 +60,35 @@
         <h1>Password Generator</h1>
       </div>
 
-      <!-- container -->
+      <!-- Output -->
 
-      <div class="container">
-        <!-- User input -->
+      <div class="output-box">
+        <h3>Your New Password is</h3>
+        <div class="output" id="output">{{ password_gen }}</div>
+      </div>
 
-        <div class="user-input">
-          <h3>Select Length of Password</h3>
-          <form>
-            <div class="value">8</div>
-            <input type="range" min="8" max="128" step="2" value="0" />
-          </form>
-        </div>
+      <!-- button -->
 
-        <!-- Output -->
+      <div class="buttons">
+        <button class="copy-btn">
+          <span
+            class="iconify"
+            data-icon="ic:baseline-file-copy"
+            data-inline="true"
+          ></span>
+          Copy
+        </button>
 
-        <div class="output-box">
-          <h3>Your New Password is </h3>
-          <div class="output" id="output">{{ password_gen }}</div>
-        </div>
+        <!-- reset button -->
 
-        <!-- button -->
-        <div class="buttons">
-          <button class="copy-btn">
-            <span
-              class="iconify"
-              data-icon="ic:baseline-file-copy"
-              data-inline="true"
-            ></span>
-            Copy
-          </button>
-          <button class="reset-btn" onclick="refreshPage()">
-            <span
-              class="iconify"
-              data-icon="ic:twotone-refresh"
-              data-inline="true"
-            ></span>
-            Regenerate
-          </button>
-        </div>
+        <button class="reset-btn" onclick="refreshPage()">
+          <span
+            class="iconify"
+            data-icon="ic:twotone-refresh"
+            data-inline="true"
+          ></span>
+          Regenerate
+        </button>
       </div>
     </section>
 
