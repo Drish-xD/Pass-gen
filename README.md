@@ -8,8 +8,7 @@ Random Password Generator witten in [pyhon3] and run as a web application using 
 
 ### Screenshot 🖥
 
-
-![Screenshot](Screenshot\Screenshot.png)
+![Screenshot](static\Assets\Screenshot.png?raw=true "Screenshot")
 
 [pyhon3]: https://www.python.org/
 [Flask]: https://flask.palletsprojects.com/en/2.0.x/
