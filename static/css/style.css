@@ -16,7 +16,7 @@ body {
   height: 100vh;
   background-image: url(../Assets/topography.svg);
   background-color: #0c0c0c;
-  z-index: 8;
+  overflow: hidden;
 }
 
 /* Navigation bar */
