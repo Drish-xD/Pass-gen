@@ -17,6 +17,19 @@ body {
   background-image: url(../Assets/topography.svg);
   background-color: #0c0c0c;
   overflow: hidden;
+  animation: fadeInAnimation ease 1.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes fadeInAnimation {
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+ }
 }
 
 /* Navigation bar */
