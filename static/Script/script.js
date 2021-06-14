@@ -16,6 +16,7 @@ function copypassword() {
 
 function refreshPage() {
   $('#output').load(" #output").removeClass('output')
+  $('#copy-btn').load(" #copy-btn")
 };
 
 // Drop down animatio of menu bar (only for screen width < 786px)
