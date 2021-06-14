@@ -18,6 +18,9 @@
     <title>Password Generator</title>
   </head>
   <body oncontextmenu="return false">
+    
+    <div id="particles-js"></div>
+    
     <!-- navbar -->
 
     <nav class="nav-bar">
@@ -95,7 +98,19 @@
     <footer class="foot">
       <h4>&copy; Copyrights 2021 by Drish. All Rights Reserved.</h4>
     </footer>
+   
+    <!-- particle.js -->
 
+    <script src="{{ url_for('static', filename='Script/particles.min.js') }}"></script>
+    <script>
+      particlesJS.load(
+        "particles-js",
+        "{{ url_for('static', filename='Script/config.json') }}",
+        function () {
+          console.log("particles.json has loaded");
+        }
+      );
+    </script>
     <script src="{{ url_for('static', filename='Script/script.js') }}"></script>
   </body>
 </html>
