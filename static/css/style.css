@@ -16,19 +16,29 @@ body {
   height: 100vh;
   background-image: url(../Assets/topography.svg);
   background-color: #0c0c0c;
-  overflow: hidden;
-  animation: fadeInAnimation ease 1.5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+  /* overflow: hidden; */
 }
 
-@keyframes fadeInAnimation {
-0% {
-    opacity: 0;
+/* Custom Scroll bar */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  
 }
-100% {
-    opacity: 1;
- }
+
+::-webkit-scrollbar-track {
+  background-color: #000000;
+  border-radius: 10px;  
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #24303880;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #253139;
 }
 
 #particles-js {
@@ -41,7 +51,7 @@ body {
 /* Navigation bar */
 
 nav {
-  position: fixed;
+  position: relative;
   width: 100%;
   line-height: 6vh;
   z-index: 2;
@@ -76,7 +86,7 @@ nav ul li a {
   padding: 2vh 1.5vw;
 }
 
-.spinner > div {
+.spinner>div {
   margin-left: 0.5vw;
   width: 1.5vh;
   height: 1.5vh;
@@ -103,23 +113,27 @@ nav ul li a {
 }
 
 @-webkit-keyframes sk-bouncedelay {
+
   0%,
   80%,
   100% {
     -webkit-transform: scale(0);
   }
+
   40% {
     -webkit-transform: scale(1);
   }
 }
 
 @keyframes sk-bouncedelay {
+
   0%,
   80%,
   100% {
     -webkit-transform: scale(0);
     transform: scale(0);
   }
+
   40% {
     -webkit-transform: scale(1);
     transform: scale(1);
@@ -190,29 +204,66 @@ nav ul li a {
 
 .mainpage {
   width: 100%;
-  height: calc(100vh - 62px);
   color: #fafafa;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 
 .title {
-  display: flex;
-  justify-content: center;
-}
-
-.title h1 {
+  display: block;
+  text-align: center;
   font: 80px "Syne", sans-serif;
   text-transform: uppercase;
   color: #7e57c2;
   letter-spacing: 0.8rem;
+  margin: 40px 0 10px 0;
+}
+
+.user-input {
+  display: block;
   text-align: center;
 }
 
+.user-input h3 {
+  font: 37px "Dosis", sans-serif;
+  letter-spacing: 0.2em;
+}
+
+.value {
+  font: 4em "Dosis", sans-serif;
+  text-align: center;
+}
+
+input[type="range"] {
+  display: block;
+  -webkit-appearance: none;
+  background-color: #253139;
+  width: 300px;
+  height: 5px;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: #7e57c2;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #fafafa;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+  transform: scale(1.5);
+}
+
 .output-box {
-  margin: 12vh 0 10vh 0;
+  margin: 10px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -220,25 +271,28 @@ nav ul li a {
 }
 
 .output-box h3 {
-  font: 40px "Dosis", sans-serif;
+  font: 37px "Dosis", sans-serif;
   letter-spacing: 1mm;
-  padding: 0 0 5vh 0;
+  padding: 20px 0;
 }
 
 .output {
-  background-color: rgba(36, 48, 56, 0.8);
+  max-width: 80%;
+  background-color: #243038cc;
   border-radius: 50px;
   text-align: center;
   padding: 10px 50px;
   font: 40px "Dosis", sans-serif;
   border: 3px solid #7e57c2;
   letter-spacing: .2em;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 .buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
+  text-align: center;
+  padding: 40px 0 60px 0; 
 }
 
 .copy-btn {
@@ -247,12 +301,14 @@ nav ul li a {
   align-items: center;
   font: 1.5rem "Dosis", sans-serif;
   letter-spacing: 0.2rem;
-  width: 200px;
+  width: 250px;
   height: 60px;
   background-color: #243038b3;
+  border: none;
   border-radius: 50px;
   border: 3px solid #7e57c2;
   cursor: pointer;
+  outline: none;
   color: #fafafa;
   margin: 0 20px;
   cursor: pointer;
@@ -283,28 +339,25 @@ nav ul li a {
 }
 
 footer {
-  position: relative;
-  display: flex;
-  width: 100%;
-  background-color: #111111;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background-color: #111111;
 }
 
 footer h4 {
-  width: 100%;
-  font: 18px "Dosis", sans-serif;
-  letter-spacing: 0.2rem;
-  color: #fafafa;
-  text-align: center;
-  padding: 20px 0;
+	width: 100%;
+	font: 15px "Dosis", sans-serif;
+	letter-spacing: 0.1rem;
+	word-spacing: 0.3rem;
+	color: #fafafa;
+	text-align: center;
+	padding: 10px 0;
 }
 
 @media screen and (max-width: 1100px) {
-  .title h1 {
+  .title {
     font: 75px "Dosis", sans-serif;
-  }
-
-  .container {
-    padding: 5vh 0 0 0;
   }
 
   .user-input h3,
@@ -351,14 +404,9 @@ footer h4 {
 }
 
 @media screen and (max-width: 600px) {
-  .mainpage {
-    width: 100%;
-    height: calc(100vh - 45px);
-    color: #fafafa;
-  }
-
-  .title h1 {
+  .title {
     font: 12vw "Dosis", sans-serif;
+    margin: 35px 0 20px 0;
   }
 
   .user-input h3,
@@ -367,20 +415,12 @@ footer h4 {
   }
 
   .value {
-    font: 4em "Dosis", sans-serif;
-  }
-
-  .output-box {
-    margin: 7vh 0 3vh 0;
+    font: 2.5em "Dosis", sans-serif;
   }
 
   .output-box .output {
-    padding: 10px 70px;
+    /* padding: 10px 70px; */
     font: 30px "Dosis", sans-serif;
-  }
-
-  .buttons {
-    flex-direction: column;
   }
 
   .copy-btn {
@@ -398,6 +438,5 @@ footer h4 {
 
   footer h4 {
     font: 12px "Dosis", sans-serif;
-    padding: 15px 0;
   }
 }

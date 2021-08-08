@@ -1,116 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="{{ url_for('static', filename='Assets/icon.png') }}"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/style.css') }}"
-    />
-    <title>Password Generator</title>
-  </head>
-  <body oncontextmenu="return false">
-    
-    <div id="particles-js"></div>
-    
-    <!-- navbar -->
 
-    <nav class="nav-bar">
-      <div class="menu-bar">
-        <div class="menu-icon">
-          <div class="wrapper-menu">
-            <div class="line-menu half start"></div>
-            <div class="line-menu"></div>
-            <div class="line-menu half end"></div>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='Assets/icon.png') }}" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <title>Password Generator</title>
+</head>
+
+<body oncontextmenu="return false">
+
+  <div id="particles-js"></div>
+
+  <!-- navbar -->
+
+  <nav class="nav-bar">
+    <div class="menu-bar">
+      <div class="menu-icon">
+        <div class="wrapper-menu">
+          <div class="line-menu half start"></div>
+          <div class="line-menu"></div>
+          <div class="line-menu half end"></div>
         </div>
       </div>
+    </div>
 
-      <div class="spinner">
-        <div class="bounce1"></div>
-        <div class="bounce2"></div>
-        <div class="bounce3"></div>
-      </div>
+    <div class="spinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
 
-      <div class="menu">
-        <ul>
-          <li><a href="https://drish-xd.github.io">Home</a></li>
-          <li>
-            <a href="https://drish-xd.github.io/Portfolio#About-me">About</a>
-          </li>
-          <li>
-            <a href="https://drish-xd.github.io/Portfolio#Skills">Skill</a>
-          </li>
-          <li>
-            <a href="https://drish-xd.github.io/Portfolio#Contacts">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <div class="menu">
+      <ul>
+        <li><a href="https://drish-xd.github.io">Home</a></li>
+        <li>
+          <a href="https://drish-xd.github.io/Portfolio#About-me">About</a>
+        </li>
+        <li>
+          <a href="https://drish-xd.github.io/Portfolio#Skills">Skill</a>
+        </li>
+        <li>
+          <a href="https://drish-xd.github.io/Portfolio#Contacts">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-    <section class="mainpage">
-      <!-- Title of page -->
+  <section class="mainpage">
 
-      <div class="title">
-        <h1>Password Generator</h1>
+    <!-- Title of page -->
+    <div class="title">
+      Password Generator
+    </div>
+
+    <!-- User Input -->
+    <form method="post">
+      <div class="user-input">
+        <h3>Select Length of Password</h3>
+        <div class="value">8</div>
+        <input type="range" name="pass-len" min="8" max="128" step="2" value="0">
       </div>
 
       <!-- Output -->
-
       <div class="output-box">
-        <h3>Your New Password is</h3>
+        <h3>Your New Password is </h3>
         <div class="output" id="output">{{ password_gen }}</div>
       </div>
 
       <!-- button -->
-
       <div class="buttons">
-        <button class="copy-btn" onclick="copypassword()">
-          <span
-            class="iconify"
-            data-icon="ic:baseline-file-copy"
-            data-inline="true"
-          ></span>
-          <div id="copy-btn">Copy</div>
+        <button class="copy-btn" type="button" onclick="copypassword()">
+          <span class="iconify" data-icon="mdi:content-copy"></span>
+          <div id="copy-text">Copy</div>
         </button>
-
-        <!-- reset button -->
-
-        <button class="reset-btn" id="reset-btn" onclick="refreshPage()">
-          <span
-            class="iconify"
-            data-icon="ic:twotone-refresh"
-            data-inline="true"
-          ></span>
-          Regenerate
+        <button class="reset-btn" type="submit">
+          <span class="iconify" data-icon="ic:round-done-outline"></span>
+          Generate
         </button>
       </div>
-    </section>
+    </form>
+  </section>
 
-    <footer class="foot">
-      <h4>&copy; Copyrights 2021 by Drish. All Rights Reserved.</h4>
-    </footer>
-   
-    <!-- particle.js -->
+  <footer class="foot">
+    <h4>&copy; Copyrights 2021 by Drish. All Rights Reserved.</h4>
+  </footer>
 
-    <script src="{{ url_for('static', filename='Script/particles.min.js') }}"></script>
-    <script>
-      particlesJS.load(
-        "particles-js",
-        "{{ url_for('static', filename='Script/config.json') }}",
-        function () {
-          console.log("particles.json has loaded");
-        }
-      );
-    </script>
-    <script src="{{ url_for('static', filename='Script/script.js') }}"></script>
-  </body>
+  <!-- particle.js -->
+
+  <script src="{{ url_for('static', filename='Script/particles.min.js') }}"></script>
+  <script>
+    particlesJS.load(
+      "particles-js",
+      "{{ url_for('static', filename='Script/config.json') }}",
+      function () {
+        console.log("particles.json has loaded");
+      }
+    );
+  </script>
+  <script src="{{ url_for('static', filename='Script/script.js') }}"></script>
+</body>
+
 </html>

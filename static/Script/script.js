@@ -1,3 +1,15 @@
+// slider value
+
+var elem = document.querySelector('input[type="range"]');
+
+var rangeValue = function () {
+  var newValue = elem.value;
+  var target = document.querySelector(".value");
+  target.innerHTML = newValue;
+};
+
+elem.addEventListener("input", rangeValue);
+
 // copy button
 
 function copypassword() {
@@ -8,16 +20,9 @@ function copypassword() {
   document.execCommand("copy");
   window.getSelection().removeAllRanges();// to deselect
 
-  document.getElementById('copy-btn')
+  document.getElementById('copy-text')
   .innerHTML="Copied!";
 }
-
-// reload button
-
-function refreshPage() {
-  $('#output').load(" #output").removeClass('output')
-  $('#copy-btn').load(" #copy-btn")
-};
 
 // Drop down animatio of menu bar (only for screen width < 786px)
 
