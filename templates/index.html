@@ -51,40 +51,41 @@
     </div>
   </nav>
 
-  <section class="mainpage">
+  <main>
+    <div class="mainpage">
+      <!-- Title of page -->
+      <div class="title">
+        Password Generator
+      </div>
 
-    <!-- Title of page -->
-    <div class="title">
-      Password Generator
+      <!-- User Input -->
+      <form method="post">
+        <div class="user-input">
+          <h3>Select Length of Password</h3>
+          <div class="value">8</div>
+          <input type="range" name="pass-len" min="8" max="128" step="2" value="0">
+        </div>
+
+        <!-- Output -->
+        <div class="output-box">
+          <h3>Your New Password is </h3>
+          <div class="output" id="output">{{ password_gen }}</div>
+        </div>
+
+        <!-- button -->
+        <div class="buttons">
+          <button class="copy-btn" type="button" onclick="copypassword()">
+            <span class="iconify" data-icon="mdi:content-copy"></span>
+            <div id="copy-text">Copy</div>
+          </button>
+          <button class="reset-btn" type="submit">
+            <span class="iconify" data-icon="ic:round-done-outline"></span>
+            Generate
+          </button>
+        </div>
+      </form>
     </div>
-
-    <!-- User Input -->
-    <form method="post">
-      <div class="user-input">
-        <h3>Select Length of Password</h3>
-        <div class="value">8</div>
-        <input type="range" name="pass-len" min="8" max="128" step="2" value="0">
-      </div>
-
-      <!-- Output -->
-      <div class="output-box">
-        <h3>Your New Password is </h3>
-        <div class="output" id="output">{{ password_gen }}</div>
-      </div>
-
-      <!-- button -->
-      <div class="buttons">
-        <button class="copy-btn" type="button" onclick="copypassword()">
-          <span class="iconify" data-icon="mdi:content-copy"></span>
-          <div id="copy-text">Copy</div>
-        </button>
-        <button class="reset-btn" type="submit">
-          <span class="iconify" data-icon="ic:round-done-outline"></span>
-          Generate
-        </button>
-      </div>
-    </form>
-  </section>
+  </main>
 
   <footer class="foot">
     <h4>&copy; Copyrights 2021 by Drish. All Rights Reserved.</h4>

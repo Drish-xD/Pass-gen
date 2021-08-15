@@ -6,17 +6,11 @@
   box-sizing: border-box;
 }
 
-html {
-  padding: 0;
-  margin: 0;
-}
-
 body {
   width: 100%;
   height: 100vh;
   background-image: url(../Assets/topography.svg);
   background-color: #0c0c0c;
-  /* overflow: hidden; */
 }
 
 /* Custom Scroll bar */
@@ -24,12 +18,12 @@ body {
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
-  
+
 }
 
 ::-webkit-scrollbar-track {
   background-color: #000000;
-  border-radius: 10px;  
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -51,7 +45,7 @@ body {
 /* Navigation bar */
 
 nav {
-  position: relative;
+  position: fixed;
   width: 100%;
   line-height: 6vh;
   z-index: 2;
@@ -73,11 +67,12 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  font-family: 'Syne', sans-serif;
-  color: #f0f8ff;
+  font-family: "Syne", sans-serif;
+  color: #f8f8f8;
   font-size: 21px;
   font-weight: 800;
   letter-spacing: 0.15rem;
+  cursor: pointer;
 }
 
 .spinner {
@@ -162,7 +157,7 @@ nav ul li a {
 }
 
 .line-menu {
-  background-color: #fff;
+  background-color: #f8f8f8;
   border-radius: 25px;
   width: 100%;
   height: 3px;
@@ -196,25 +191,31 @@ nav ul li a {
   width: 100%;
   background: rgba(0, 0, 0, 0.9);
   box-sizing: border-box;
-  color: #f0f8ff;
+  color: #f8f8f8;
   display: none;
 }
 
 /* mainpage */
 
-.mainpage {
+main {
+  position: absolute;
+  height: auto;
   width: 100%;
-  color: #fafafa;
+}
+
+.mainpage {
+  margin: 10vh auto 60px auto;
+  color: #f8f8f8;
 }
 
 .title {
   display: block;
   text-align: center;
-  font: 80px "Syne", sans-serif;
+  font: 800 70px "Syne", sans-serif;
   text-transform: uppercase;
   color: #7e57c2;
   letter-spacing: 0.8rem;
-  margin: 40px 0 10px 0;
+  margin-bottom: 10px;
 }
 
 .user-input {
@@ -248,7 +249,7 @@ input[type="range"]::-webkit-slider-thumb {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 2px solid #fafafa;
+  border: 2px solid #f8f8f8;
   cursor: pointer;
   transition: 0.3s ease-in-out;
 }
@@ -271,6 +272,7 @@ input[type="range"]::-webkit-slider-thumb:active {
 }
 
 .output-box h3 {
+  text-align: center;
   font: 37px "Dosis", sans-serif;
   letter-spacing: 1mm;
   padding: 20px 0;
@@ -292,7 +294,7 @@ input[type="range"]::-webkit-slider-thumb:active {
 .buttons {
   display: block;
   text-align: center;
-  padding: 40px 0 60px 0; 
+  padding: 40px 0 60px 0;
 }
 
 .copy-btn {
@@ -309,7 +311,7 @@ input[type="range"]::-webkit-slider-thumb:active {
   border: 3px solid #7e57c2;
   cursor: pointer;
   outline: none;
-  color: #fafafa;
+  color: #f8f8f8;
   margin: 0 20px;
   cursor: pointer;
   transition: all 0.5s;
@@ -326,7 +328,7 @@ input[type="range"]::-webkit-slider-thumb:active {
   border: 3px solid #7e57c2;
   cursor: pointer;
   outline: none;
-  color: #fafafa;
+  color: #f8f8f8;
   margin: 0 20px;
   cursor: pointer;
   transition: all 0.5s;
@@ -339,25 +341,25 @@ input[type="range"]::-webkit-slider-thumb:active {
 }
 
 footer {
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	background-color: #111111;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #111111;
 }
 
 footer h4 {
-	width: 100%;
-	font: 15px "Dosis", sans-serif;
-	letter-spacing: 0.1rem;
-	word-spacing: 0.3rem;
-	color: #fafafa;
-	text-align: center;
-	padding: 10px 0;
+  width: 100%;
+  font: 15px "Dosis", sans-serif;
+  letter-spacing: 0.1rem;
+  word-spacing: 0.3rem;
+  color: #f8f8f8;
+  text-align: center;
+  padding: 10px 0;
 }
 
 @media screen and (max-width: 1100px) {
   .title {
-    font: 75px "Dosis", sans-serif;
+    font: 800 60px "Syne", sans-serif;
   }
 
   .user-input h3,
@@ -405,7 +407,7 @@ footer h4 {
 
 @media screen and (max-width: 600px) {
   .title {
-    font: 12vw "Dosis", sans-serif;
+    font: 800 50px "Syne", sans-serif;
     margin: 35px 0 20px 0;
   }
 
@@ -418,9 +420,12 @@ footer h4 {
     font: 2.5em "Dosis", sans-serif;
   }
 
+  input[type="range"] {
+    width: 250px;
+  }
+
   .output-box .output {
-    /* padding: 10px 70px; */
-    font: 30px "Dosis", sans-serif;
+    font: 25px "Dosis", sans-serif;
   }
 
   .copy-btn {
@@ -438,5 +443,17 @@ footer h4 {
 
   footer h4 {
     font: 12px "Dosis", sans-serif;
+  }
+}
+
+@media screen and (max-width: 400px) {
+
+  .title {
+    font: 800 10vw "Syne", sans-serif;
+    margin: 35px 0 20px 0;
+  }
+
+  input[type="range"] {
+    width: 200px;
   }
 }
