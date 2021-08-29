@@ -11,6 +11,9 @@ body {
   height: 100vh;
   background-image: url(../Assets/topography.svg);
   background-color: #0c0c0c;
+  align-content: center;
+  justify-content: center;
+  display: flex;
 }
 
 /* Custom Scroll bar */
@@ -200,8 +203,8 @@ nav ul li a {
 
 main {
   position: absolute;
-  height: auto;
   width: 100%;
+  height: auto;
 }
 
 .mainpage {
