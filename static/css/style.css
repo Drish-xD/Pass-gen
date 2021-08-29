@@ -44,33 +44,34 @@ body {
 
 /* Navigation bar */
 
+
 nav {
   position: fixed;
   width: 100%;
-  line-height: 6vh;
   z-index: 2;
   overflow: hidden;
+  line-height: 50px;
 }
 
 nav ul {
-  line-height: 6vh;
-  list-style: none;
-  background: #000000e6;
+  background: rgba(0, 0, 0, 0);
   text-align: center;
   transition: 0.5s;
 }
 
+nav.black ul {
+  background: #000000e6;
+}
+
 nav ul li {
   display: inline-block;
-  padding: 1.8vh 4vw;
+  padding: 10px 4vw;
 }
 
 nav ul li a {
   text-decoration: none;
-  font-family: "Syne", sans-serif;
-  color: #f8f8f8;
-  font-size: 21px;
-  font-weight: 800;
+  color: #f1f1f1;
+  font: 800 21px "Syne";
   letter-spacing: 0.15rem;
   cursor: pointer;
 }
@@ -78,13 +79,13 @@ nav ul li a {
 .spinner {
   top: 0;
   position: fixed;
-  padding: 2vh 1.5vw;
+  padding: 10px 15px;
 }
 
 .spinner>div {
   margin-left: 0.5vw;
-  width: 1.5vh;
-  height: 1.5vh;
+  width: 10px;
+  height: 10px;
   border-radius: 100%;
   display: inline-block;
   -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
@@ -137,7 +138,7 @@ nav ul li a {
 
 .menu-icon {
   position: absolute;
-  margin: 3vh;
+  margin: 19px;
   right: 0;
   display: none;
 }
@@ -157,7 +158,7 @@ nav ul li a {
 }
 
 .line-menu {
-  background-color: #f8f8f8;
+  background-color: #ffffff;
   border-radius: 25px;
   width: 100%;
   height: 3px;
@@ -187,11 +188,11 @@ nav ul li a {
 }
 
 .menu-bar {
-  height: 9vh;
+  height: 60px;
   width: 100%;
   background: rgba(0, 0, 0, 0.9);
   box-sizing: border-box;
-  color: #f8f8f8;
+  color: #f1f1f1;
   display: none;
 }
 
@@ -204,7 +205,7 @@ main {
 }
 
 .mainpage {
-  margin: 10vh auto 60px auto;
+  margin: 100px auto 60px auto;
   color: #f8f8f8;
 }
 
@@ -358,6 +359,10 @@ footer h4 {
 }
 
 @media screen and (max-width: 1100px) {
+  nav ul li a {
+    font-size: 20px;
+  }
+
   .title {
     font: 800 60px "Syne", sans-serif;
   }
@@ -380,8 +385,6 @@ footer h4 {
 
   nav ul li a {
     font-size: 22px;
-    font-weight: 800;
-    letter-spacing: 0.15rem;
   }
 
   nav ul li {
@@ -392,7 +395,7 @@ footer h4 {
   }
 
   .showing {
-    max-height: 30em;
+    max-height: 25em;
   }
 
   .menu-bar {
@@ -402,6 +405,17 @@ footer h4 {
   .menu-icon {
     display: block;
     font-size: 30px;
+  }
+
+  .spinner {
+    top: 0;
+    position: fixed;
+    padding: 5px 15px;
+  }
+
+  .spinner>div {
+    width: 8px;
+    height: 8px;
   }
 }
 
