@@ -208,7 +208,7 @@ main {
 }
 
 .mainpage {
-  margin: 100px auto 60px auto;
+  margin: 100px auto 60px;
   color: #f8f8f8;
 }
 
@@ -298,7 +298,7 @@ input[type="range"]::-webkit-slider-thumb:active {
 .buttons {
   display: block;
   text-align: center;
-  padding: 40px 0 60px 0;
+  padding: 40px 0 60px;
 }
 
 .copy-btn {
@@ -425,7 +425,7 @@ footer h4 {
 @media screen and (max-width: 600px) {
   .title {
     font: 800 50px "Syne", sans-serif;
-    margin: 35px 0 20px 0;
+    margin: 35px 0 20px;
   }
 
   .user-input h3,
@@ -449,7 +449,7 @@ footer h4 {
     font: 1.2rem "Dosis", sans-serif;
     width: 150px;
     height: 50px;
-    margin: 0 0 20px 0;
+    margin: 0 0 20px;
   }
 
   .reset-btn {
@@ -467,7 +467,7 @@ footer h4 {
 
   .title {
     font: 800 10vw "Syne", sans-serif;
-    margin: 35px 0 20px 0;
+    margin: 35px 0 20px;
   }
 
   input[type="range"] {
